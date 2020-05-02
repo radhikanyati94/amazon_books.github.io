@@ -1,0 +1,203 @@
+<head>
+  <link rel="stylesheet" href="bubbles.css">
+  <link rel="stylesheet" href="https://yui-s.yahooapis.com/pure/0.5.0/pure-min.css">
+<link rel="stylesheet" href="https://rawgit.com/tpreusse/radar-chart-d3/master/src/radar-chart.css">
+</head>
+
+<body>
+  <div class="title">  
+	ANALYSIS OF REVIEWS OF KINDLE AND HARDCOVER BOOKS OVER THE YEARS 
+  </div>
+  <!-- <img src="book.png"> -->
+
+  
+
+
+<div id="scrollable">
+  <div>
+    <div class = "container">
+        <div class = "inner">
+            <div class="vis-container">
+            </br>
+          
+
+                <div class = "dropdown"></div>
+              </br>
+              <div class = "side_title_bar"></div>
+
+                <svg id="barchart">
+                  
+                </svg>
+            </div>
+            <div class = "vis">
+              <div class = "side_title"></div>
+              <div id = "chart">
+                
+
+              </div>
+            </div>
+            <div class="network">
+
+              <div class = "side_title2"></div>
+              <div id = "left-bottom">
+              <div id = "charts">
+                <div class = "side_title_radar"></div>
+              </div>
+            </br>
+              <div id = "stackbar">
+              
+                <div class = "side_title_stack"></div>
+                <div id="tooltipstack" class="hidden">
+                    <!-- <p><span id="value">100</span></p> -->
+                </div>
+            </div>
+          </div>
+          <div id = "networkchart"> 
+            <div class = "side_title_network"></div>
+
+            <button id="up">Check Out More Books</button>
+          </div>
+          
+              </div>
+              
+              
+              
+              
+         
+        </div>
+        
+
+          
+        </div>
+            <!-- <div class = "networkright">
+              <div class = "side_title"></div>
+              <div id = "chart2"> -->
+                <!-- <div class="network">
+                  <div class = "side_title2"></div>
+                  <div id = "networkchart"> </div>
+                     
+             <div id="charts"></div>
+                <svg width="400" height="100"></svg> -->
+           
+          
+              
+            </div> 
+
+                
+
+
+              </div>
+            </div>
+        </div>
+    </div>
+  </div>
+
+</div>
+
+
+<script src="https://d3js.org/d3.v3.min.js"></script>
+<script>
+    d3version3 = d3
+    window.d3 = null
+  </script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/d3/4.6.0/d3.min.js"></script>
+<script>
+  d3version4 = d3
+  window.d3 = null
+</script>
+<script src='https://d3js.org/d3.v5.min.js'></script>
+<script>
+  d3version5 = d3
+  window.d3 = null
+</script>
+
+<script src="https://d3js.org/d3.v3.js"></script>
+<script>
+d3radar = d3
+window.d3 = null
+</script>
+<script src="https://code.jquery.com/jquery-latest.min.js"></script>
+
+
+<script src="https://d3js.org/d3.v4.min.js"></script>
+<script>
+d3stack = d3
+window.d3 = null
+</script>
+
+
+
+<script>
+// RadarChart.defaultConfig.color = function() {return '#ADD8E6';};
+// RadarChart.defaultConfig.radius = 3;
+// RadarChart.defaultConfig.w = 400;
+// RadarChart.defaultConfig.h = 400;
+</script>
+
+<span></span>
+
+
+
+
+
+    <script src="https://mbostock.github.com/d3/d3.js"></script>
+<script src="bubble_chart.js"></script>
+<script src="network.js"></script>
+<script src="bubble.js"></script>
+<script src="./radar.js"></script>
+<!-- <script src="./stackbar.js"></script> -->
+<script src = "./stacked.js"></script>
+
+
+
+
+<script>
+  
+  d3version5.select(".side_title").html("Top Ranked Books in the year 2014 in Health, Fitness & Dieting");
+
+  let myBubbleChart = bubbleChart();
+
+// function called once promise is resolved and data is loaded from csv
+// calls bubble chart function to display inside #vis div
+function display(data) {
+  data = data.filter(function(row) {
+        return row['Category'] == 'Health, Fitness & Dieting' && row['Review_time'] == 2014;
+    })
+  myBubbleChart('#chart', data);
+}
+
+// load data
+d3version5.csv('./top10BooksAndKindle.csv').then(display);
+
+
+var scrollable = d3.select(".container");
+
+d3.select("#up").on('click', function() {
+      d3.select("#scrollable").transition().duration(1000)
+      .tween("uniquetweenname", scrollTopTween(0));
+      });
+      
+function scrollTopTween(scrollTop) {
+  return function() {
+      
+    var i = d3.interpolateNumber(this.scrollTop, scrollTop);
+    
+    return function(t) {console.log(i(t)); this.scrollTop = i(t); };
+ };
+}
+// d3version4.csv('./topbooksandkindle.csv', function(csv) {
+      
+//       csv = csv.filter(function(row) {
+//         return row['genre'] == 'Literature & Fiction' && row['Review_time'] == 2009;
+//     })
+//       var chart = bubbleChart();
+//       d3version5.select('.vis').datum(csv).call(chart);
+      
+            
+      
+//     });
+
+// radarchart();
+</script>
+</body>

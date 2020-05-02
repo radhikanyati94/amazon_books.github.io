@@ -1,0 +1,81 @@
+[
+    
+    {
+        "year": "2009", 
+        "values": [
+            {
+                "value": 0,
+                "type": "kindle"
+            }, 
+            {
+                "value": 349,
+                "type": "hardcover"
+            }
+        ]
+    }, 
+    {
+        "year": "2010", 
+        "values": [
+            {
+                "value": 1,
+                "type": "kindle"
+            }, 
+            {
+                "value": 387,
+                "type": "hardcover"
+            }
+        ]
+    }, 
+    {
+        "year": "2011", 
+        "values": [
+            {
+                "value": 54,
+                "type": "kindle"
+            }, 
+            {
+                "value": 368,
+                "type": "hardcover"
+            }
+        ]
+    }, 
+    {
+        "year": "2012", 
+        "values": [
+            {
+                "value": 1571,
+                "type": "kindle"
+            }, 
+            {
+                "value": 465,
+                "type": "hardcover"
+            }
+        ]
+    },
+    {
+        "year": "2013", 
+        "values": [
+            {
+                "value": 6016,
+                "type": "kindle"
+            }, 
+            {
+                "value": 852,
+                "type": "hardcover"
+            }
+        ]
+    },
+    {
+        "year": "2014", 
+        "values": [
+            {
+                "value": 4500,
+                "type": "kindle"
+            }, 
+            {
+                "value": 480,
+                "type": "hardcover"
+            }
+        ]
+    }
+]
